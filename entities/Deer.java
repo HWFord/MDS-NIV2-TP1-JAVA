@@ -13,4 +13,32 @@ public class Deer extends Animal implements Terrestrial, Herbivorus {
   public Deer(Long id, String name, Float weight, Float height) {
     super(id, name, weight, height);
   }
+
+	@Override
+	public void move() {
+		this.walk();
+		
+	}	
+	
+	@Override
+	public void walk() {
+		System.out.println("This animal is walking");
+		
+	}
+	
+	
+	@Override
+	public void eat(Eatable eatable) {
+		if(eatable instanceof Vegetable) {
+			this.eat((Vegetable)eatable);
+		}else {
+			System.out.println("This animal can noteat vegetables");
+		}
+		
+	}
+	
+	@Override
+	public void eatVegetable(Vegetable vegetable) {
+		
+	}
 }

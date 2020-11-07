@@ -14,7 +14,6 @@ public abstract class Animal implements Eatable {
   }
 
   public Animal(Long id, String name, Float weight, Float height) {
-    super();
     this.id = id;
     this.name = name;
     this.weight = weight;

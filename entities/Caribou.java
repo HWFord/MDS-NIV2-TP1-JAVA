@@ -5,32 +5,42 @@ import com.tactfactory.javaniveau2.tps.tp1.functionnalities.Herbivorus;
 import com.tactfactory.javaniveau2.tps.tp1.functionnalities.Terrestrial;
 
 public class Caribou extends Animal implements Terrestrial, Herbivorus {
-
-  public Caribou() {
-    super();
-  }
-
-  public Caribou(Long id, String name, Float weight, Float height) {
-    super(id, name, weight, height);
-  }
+	
+	public Caribou() {
+	    super();
+	  }
+	
+	public Caribou(Long id, String name, Float weight, Float height) {
+		super(id, name, weight, height);
+	}
 
 	@Override
 	public void move() {
-		boolean result = false;
-		if (move instanceof Terrestrial) {
-			System.out.println("walking");
+		this.walk();
+		
+	}
+	
+
+	@Override
+	public void eat(Eatable eatable) {
+		if(eatable instanceof Vegetable) {
+			this.eat((Vegetable)eatable);
+		}else {
+			System.out.println("This animal can not eat vegetables");
 		}
 		
 	}
 	
 	@Override
-	public void eat(Eatable eatable) {
-		boolean result = false;
-		if (eatable instanceof Herbivorus) {
-			eatable = Vegetable;
-			result = true;
-		}
-		return result;
+	public void walk() {
+		System.out.println("This animal is walking");
+		
 	}
 	
+	@Override
+	public void eatVegetable(Vegetable vegetable) {
+		
+	}
+
+
 }
